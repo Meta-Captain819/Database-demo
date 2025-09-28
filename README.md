@@ -9,13 +9,13 @@ A teaching-friendly Next.js project that demonstrates how to build a modern auth
 
 ## � Table of contents
 
-- [📚 What you will learn](#-what-you-will-learn)
-- [🧱 Tech stack at a glance](#-tech-stack-at-a-glance)
-- [🗂️ Project tour](#-project-tour)
-- [🚀 Getting started (Windows-friendly)](#-getting-started-windows-friendly)
-- [🔐 Environment variables](#-environment-variables)
+- [📚 What you will learn](#what-you-will-learn)
+- [🧱 Tech stack at a glance](#tech-stack-at-a-glance)
+- [🗂️ Project tour](#project-tour)
+- [🚀 Getting started (Windows-friendly)](#getting-started-windows-friendly)
+- [🔐 Environment variables](#environment-variables)
   - [Generating a secret](#generating-a-secret)
-- [🗄️ Database deep dive](#-database-deep-dive)
+- [🗄️ Database deep dive](#database-deep-dive)
   - [Key vocabulary](#key-vocabulary-no-prior-knowledge-needed)
   - [Create a free MongoDB Atlas database](#step-by-step-create-a-free-mongodb-atlas-database-recommended)
   - [Run MongoDB locally](#option-b-run-mongodb-locally-offline-learning)
@@ -26,12 +26,12 @@ A teaching-friendly Next.js project that demonstrates how to build a modern auth
   - [Lifecycle of a request](#lifecycle-of-a-request-how-data-flows)
   - [Use the same database from other languages](#using-the-same-database-from-other-languages)
 - [🔒 Authentication flow explained](#-authentication-flow-explained)
-- [🌐 API reference](#-api-reference)
-- [🎨 Frontend walkthrough](#-frontend-walkthrough)
-- [✅ Development checklist](#-development-checklist)
-- [🛠️ Troubleshooting](#-troubleshooting)
-- [🌱 Ideas for student extensions](#-ideas-for-student-extensions)
-- [📎 Further reading](#-further-reading)
+- [🌐 API reference](#api-reference)
+- [🎨 Frontend walkthrough](#frontend-walkthrough)
+- [✅ Development checklist](#development-checklist)
+- [🛠️ Troubleshooting](#troubleshooting)
+- [🌱 Ideas for student extensions](#ideas-for-student-extensions)
+- [📎 Further reading](#further-reading)
 
 ##  What you will learn
 
