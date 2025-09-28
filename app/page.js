@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import { GlowButton } from '@/components/GlowButton';
-import { Card } from '@/components/Card';
 import { AnimatedBackground } from '@/components/AnimatedBackground';
 import { getCurrentUser } from '@/lib/auth';
+
+export const dynamic = 'force-dynamic';
 
 export default async function Home() {
   const user = await getCurrentUser();
@@ -14,15 +15,15 @@ export default async function Home() {
       <section className="relative pb-16 pt-12 lg:pt-20">
         <div className="mx-auto max-w-5xl text-center">
           <h1 className="mb-6 bg-gradient-to-br from-cyan-400 via-sky-400 to-indigo-400 bg-clip-text text-4xl font-semibold text-transparent md:text-5xl">
-            A Futuristic Interface for Your Data Realm
+            Simple Database Demonstration
           </h1>
           <p className="mx-auto max-w-3xl text-lg leading-relaxed text-slate-300/85 md:text-xl">
-            Secure authentication, elegant glass surfaces and luminous interactions. Build, explore and manage user identities with style.
+            Seamless database operations with secure authentication. Create, query, update, and manage your data.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
             {isAuthenticated ? (
-              <GlowButton as={Link} href="/profile" className="min-w-[170px]">
-                Go to Profile
+              <GlowButton as={Link} href="/profile" className="min-w-[130px]">
+                Profile
               </GlowButton>
             ) : (
               <>
@@ -37,7 +38,7 @@ export default async function Home() {
           </div>
         </div>
       </section>
-      <section className="pb-24">
+      {/* <section className="pb-24">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <Card title="Edge Secure JWTs">
             <p className="text-sm text-slate-300/80">
@@ -70,7 +71,7 @@ export default async function Home() {
             </p>
           </Card>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

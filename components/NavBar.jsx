@@ -27,7 +27,7 @@ export default function NavBar({ user }) {
     <header className="sticky top-0 z-40 bg-slate-950/90 text-white">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
         <Link href="/" className="text-lg font-semibold tracking-tight">
-          NeoDB
+          Database Demo
         </Link>
 
         <nav className="hidden items-center gap-6 text-sm md:flex">

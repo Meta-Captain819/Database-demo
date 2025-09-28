@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { GlowButton } from '@/components/GlowButton';
+import { LoadingOverlay } from '@/components/LoadingOverlay';
 
 const inputClasses =
   'w-full rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white shadow-[0_18px_45px_-30px_rgba(59,130,246,0.65)] transition focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/35 placeholder:text-slate-400';
@@ -21,6 +22,7 @@ export default function LoginPage() {
     e.preventDefault();
     setError('');
     setLoading(true);
+    let success = false;
     try {
       const res = await fetch('/api/auth/login', {
         method: 'POST',
@@ -31,18 +33,24 @@ export default function LoginPage() {
       if (!res.ok) {
         setError(data.error || 'Login failed');
       } else {
+        success = true;
+        router.refresh();
         router.push('/profile');
       }
     } catch (err) {
       setError('Network error');
     } finally {
-      setLoading(false);
+      if (!success) {
+        setLoading(false);
+      }
     }
   };
 
   return (
-    <div className="relative mx-auto max-w-lg">
-      <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 shadow-[0_40px_120px_-45px_rgba(56,189,248,0.55)] backdrop-blur-2xl md:p-10">
+    <>
+      <LoadingOverlay visible={loading} message="Logging you in…" />
+      <div className="relative mx-auto max-w-lg">
+        <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 shadow-[0_40px_120px_-45px_rgba(56,189,248,0.55)] backdrop-blur-2xl md:p-10">
         <h1 className="mb-2 bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-400 bg-clip-text text-3xl font-semibold text-transparent">
           Welcome Back
         </h1>
@@ -92,5 +100,6 @@ export default function LoginPage() {
         </Link>
       </p>
     </div>
+    </>
   );
 }

@@ -1,9 +1,8 @@
-# NeoDB Authentication Demo
+# Database usage and Work flow
 
-A teaching-friendly Next.js project that demonstrates how to build a modern authentication system backed by MongoDB. The goal is to help new students understand **every moving piece**—from database modelling to UI components—so they can read the code, run the project, and extend it with confidence.
+A friendly Next.js project that demonstrates how to build a modern authentication system backed by MongoDB. The goal is to help new students understand **every moving piece**—from database modelling to UI components—so they can read the code, run the project, and extend it with confidence.
 
-> **Who is this for?**
-> Students who know a bit of HTML/CSS/JS but are new to frameworks, databases, or authentication. Every section below breaks down the concepts in plain language.
+
 
 ---
 

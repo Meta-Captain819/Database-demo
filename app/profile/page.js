@@ -5,6 +5,8 @@ import { dbConnect } from '@/lib/mongodb';
 import User from '@/models/User';
 import { GlowButton } from '@/components/GlowButton';
 import { zodiacForDate } from '@/lib/zodiac';
+import { AgeTicker } from '@/components/AgeTicker';
+import { calculatePreciseAge } from '@/lib/age';
 
 const COOKIE_NAME = 'auth_token';
 const JWT_SECRET = process.env.JWT_SECRET;
@@ -27,7 +29,8 @@ async function getUserServerSide() {
 
 async function logoutAction() {
   'use server';
-  cookies().set(COOKIE_NAME, '', { path: '/', maxAge: 0 });
+  const cookis = await cookies();
+  cookis.set(COOKIE_NAME, '', { path: '/', maxAge: 0 });
   redirect('/login');
 }
 
@@ -36,7 +39,8 @@ export default async function ProfilePage() {
   if (!user) redirect('/login');
 
   const joined = new Date(user.createdAt);
-  const age = user.dob ? Math.max(0, Math.floor((Date.now() - new Date(user.dob)) / (1000 * 60 * 60 * 24 * 365.25))) : '—';
+  const ageParts = user.dob ? calculatePreciseAge(user.dob) : null;
+  const ageSummary = ageParts ? `${ageParts.years}y ${ageParts.months}m` : '—';
   const zodiac = zodiacForDate(user.dob);
 
   return (
@@ -65,7 +69,7 @@ export default async function ProfilePage() {
           <div className="card bg-white/[0.06] backdrop-blur-md border-white/15 p-6 md:p-7">
             <h2 className="text-base font-semibold mb-5 text-white/90">Snapshot</h2>
             <div className="grid grid-cols-2 gap-4 text-center">
-              <Metric label="Age" value={age} />
+              <Metric label="Age" value={ageSummary} />
               <Metric label="Joined" value={joined.toLocaleDateString()} />
             </div>
           </div>
@@ -88,6 +92,17 @@ export default async function ProfilePage() {
               <Detail label="Email" value={user.email} />
               {user.fieldOfStudy && <Detail label="Field of Study" value={user.fieldOfStudy} />}
               {user.dob && <Detail label="Date of Birth" value={new Date(user.dob).toLocaleDateString()} />}
+              {ageParts && (
+                <Detail
+                  label="Exact Age"
+                  value={
+                    <AgeTicker
+                      birthDate={user.dob}
+                      initialAge={ageParts}
+                    />
+                  }
+                />
+              )}
               {user.address && <Detail label="Address" value={user.address} />}
               <Detail label="Account Created" value={joined.toLocaleString()} />
             </div>
