@@ -33,14 +33,14 @@ A teaching-friendly Next.js project that demonstrates how to build a modern auth
 - [🌱 Ideas for student extensions](#-ideas-for-student-extensions)
 - [📎 Further reading](#-further-reading)
 
-## �📚 What you will learn
+##  What you will learn
 
 - How the App Router in Next.js organises pages, layouts, and API routes.
 - How MongoDB + Mongoose store user accounts and why we hash passwords.
 - How JWT (JSON Web Tokens) enable stateless authentication via secure cookies.
 - How the UI switches between “guest” and “signed-in” states using shared helpers.
 
-## 🧱 Tech stack at a glance
+##  Tech stack at a glance
 
 | Layer | Technology | Why we use it |
 | --- | --- | --- |
@@ -50,7 +50,7 @@ A teaching-friendly Next.js project that demonstrates how to build a modern auth
 | Auth | `jose` (JWT) + HttpOnly cookies | Secure, stateless sessions that work on the Edge runtime |
 | Utilities | `bcryptjs`, `lucide-react` | Password hashing, icons |
 
-## 🗂️ Project tour
+##  Project tour
 
 ```
 database-demo/
@@ -71,7 +71,7 @@ database-demo/
 └─ README.md               # You are here ❤
 ```
 
-## 🚀 Getting started (Windows-friendly)
+##  Getting started (Windows-friendly)
 
 1. **Install prerequisites**
    - [Node.js 20 LTS](https://nodejs.org/) (includes `npm`)
@@ -103,7 +103,7 @@ pnpm dev
 
 > 💡 Tip: leave the terminal open; the dev server watches for file changes and reloads instantly.
 
-## 🔐 Environment variables
+##  Environment variables
 
 Create a file named `.env.local` in the project root. This file is **not** committed to Git, so it is safe to place secrets here locally.
 
@@ -127,7 +127,7 @@ In PowerShell:
 
 Run the command twice and combine the output for a 64-character value.
 
-## 🗄️ Database deep dive
+##  Database deep dive
 
 ### Key vocabulary (no prior knowledge needed)
 
@@ -249,7 +249,7 @@ If the database connection fails, the API returns a 500 response—check the ter
 - Example: in Python you would install `pymongo` and call `MongoClient(MONGO_URI)`; in Java you would use the `mongo-java-driver`.
 - This means you can prototype in Next.js and later build CLI tools, bots, or mobile backends that all talk to the same database.
 
-## 🔒 Authentication flow explained
+##  Authentication flow explained
 
 | Step | What happens | Relevant file |
 | --- | --- | --- |
@@ -267,7 +267,7 @@ Important security choices:
 
 To log out we simply overwrite the cookie with an empty value (`app/api/auth/logout/route.js`).
 
-## 🌐 API reference
+##  API reference
 
 | Method | Route | Purpose | Body example |
 | --- | --- | --- | --- |
@@ -278,7 +278,7 @@ To log out we simply overwrite the cookie with an empty value (`app/api/auth/log
 
 All responses are JSON. Errors are returned as `{ "error": "message" }` with meaningful HTTP status codes (400 for bad input, 401 for bad credentials, etc.).
 
-## 🎨 Frontend walkthrough
+##  Frontend walkthrough
 
 | Page | Behaviour |
 | --- | --- |
@@ -293,13 +293,13 @@ Reusable components:
 - `GlowButton.jsx` standardises button styling and variants.
 - `AnimatedBackground.jsx` draws an ambient particle field behind the hero section.
 
-## ✅ Development checklist
+##  Development checklist
 
 - `pnpm lint` — run ESLint to keep code style consistent.
 - `pnpm build` — compiles the production bundle (optional during learning, required before deployment).
 - Use the browser dev tools’ **Application → Cookies** panel to inspect the `auth_token` cookie during testing.
 
-## 🛠️ Troubleshooting
+##  Troubleshooting
 
 | Symptom | Likely cause | Fix |
 | --- | --- | --- |
@@ -307,14 +307,14 @@ Reusable components:
 | Login always fails | Incorrect password or hashing mismatch | Check that `bcryptjs` is installed and that you created the user via `/signup`. |
 | Redirect loop on `/profile` | JWT secret changed while cookie still valid | Clear browser cookies or log in again. |
 
-## 🌱 Ideas for student extensions
+##  Ideas for student extensions
 
 - Add form validation hints (password strength, confirm password).
 - Store extra profile fields (e.g., phone number) and render them in the dashboard.
 - Implement role-based access (e.g., admin vs student) by adding a `role` field to the schema.
 - Integrate a third-party auth provider (Google, GitHub) once the basic flow is understood.
 
-## 📎 Further reading
+##  Further reading
 
 - [Next.js App Router documentation](https://nextjs.org/docs/app)
 - [MongoDB University free courses](https://learn.mongodb.com/)
