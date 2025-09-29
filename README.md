@@ -30,7 +30,7 @@ A friendly Next.js project that demonstrates how to build a modern authenticatio
 - [✅ Development checklist](#development-checklist)
 - [🛠️ Troubleshooting](#troubleshooting)
 - [🌱 Ideas for student extensions](#ideas-for-student-extensions)
-- [📎 Further reading](#further-reading)
+- [ Developer details](#developer-details)
 
 ##  What you will learn
 
@@ -313,10 +313,21 @@ Reusable components:
 - Implement role-based access (e.g., admin vs student) by adding a `role` field to the schema.
 - Integrate a third-party auth provider (Google, GitHub) once the basic flow is understood.
 
-##  Further reading
 
-- [Next.js App Router documentation](https://nextjs.org/docs/app)
-- [MongoDB University free courses](https://learn.mongodb.com/)
-- [Introduction to JSON Web Tokens](https://jwt.io/introduction)
 
-Happy hacking and teaching! 🎓
+## Developer details
+
+This educational Database-Demo project is maintained and developed by Muzammil Mehdi.
+
+
+
+### Contact
+
+For questions, support, or feedback about this project:
+
+-  Email: [metacaptain11@gmail.com](mailto:team@database-demo.example.com)
+
+
+### License
+
+This educational project is released under the MIT License. See the [LICENSE](LICENSE) file for details.
