@@ -34,7 +34,6 @@ export default async function RootLayout({ children }) {
         </main>
         <footer className="mt-auto border-t border-white/10 py-8 text-center text-xs text-slate-300/70">
           <p className="mb-2">Built with Next.js & MongoDB</p>
-          <p className="opacity-70">© {new Date().getFullYear()} NeoDB Interface</p>
         </footer>
       </body>
     </html>

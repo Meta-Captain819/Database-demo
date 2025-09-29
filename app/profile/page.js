@@ -81,9 +81,7 @@ export default async function ProfilePage() {
               <li>Edge runtime token verify</li>
             </ul>
           </div>
-          <form action={logoutAction}>
-            <GlowButton type="submit" size="lg" className="w-full">Logout</GlowButton>
-          </form>
+          
         </div>
         <div className="md:col-span-2 space-y-8">
           <div className="card bg-white/[0.08] backdrop-blur-md border-white/15 p-6 md:p-10">
@@ -109,7 +107,11 @@ export default async function ProfilePage() {
           </div>
           {/* Zodiac information now elevated to header for better visibility on mobile */}
         </div>
+
       </div>
+      <form action={logoutAction}>
+            <GlowButton type="submit" size="lg" className="w-[40%] sm:w-[30%] md:w-[20%] mt-5">Logout</GlowButton>
+          </form>
     </div>
   );
 }
